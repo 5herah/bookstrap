@@ -1,4 +1,4 @@
 bookstrap
 =========
 
-Curriculum management
+Curriculum management.
