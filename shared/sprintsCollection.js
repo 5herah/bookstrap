@@ -1,2 +1,2 @@
 Sprints = new Meteor.Collection('sprints');
-Students = new Meteor.Collection('students');
+Profiles = new Meteor.Collection('profiles');

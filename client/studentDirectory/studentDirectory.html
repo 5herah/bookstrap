@@ -1,13 +1,12 @@
-<body>
-  {{> studentInfo}}
-</body>
-
-<template name="studentInfo">
+<template name="profileInfo">
   <form>
-    <input type="text" class="name" value=""/>
+    <input type="text" id="name" placeholder="Name"/>
+    <input type="text" id="phone" placeholder="phone"/>
+    <input type="text" id="e-mail" placeholder="e-mail"/>
+    <input type="button" class="submit"/>
   </form>
 
   <div class="student">
-    {{studentStuff}}
+    {{profileStuff}}
   </div>
 </template>
