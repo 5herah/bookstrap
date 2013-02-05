@@ -20,4 +20,22 @@ describe('curriculum', function () {
       }, 250);
     });
   });
+
+  describe('curriculumfile', function () {
+
+    it('getMarkdown should set a session variable with a string (async)', function () {
+      Template.curriculumfile.getMarkdown();
+      var text = Session.get('dirContents');
+      Meteor.setTimeout(function () {
+        chai.assert.isString(text);
+      }, 250);
+    });
+
+    it('displayMarkdown should return a string (async)', function () {
+      var text = Template.curriculumfile.displayMarkdown();
+      Meteor.setTimeout(function () {
+        chai.assert.isString(text);
+      }, 250);
+    });
+  });
 });
