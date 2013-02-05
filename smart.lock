@@ -8,7 +8,8 @@
     "basePackages": {
       "marked": {},
       "router": {},
-      "mini-pages": {}
+      "mini-pages": {},
+      "mocha-web": {}
     },
     "packages": {
       "marked": {
@@ -25,6 +26,11 @@
         "git": "https://github.com/cmather/meteor-mini-pages.git",
         "tag": "v0.2.3",
         "commit": "dcf77ccca21508a1eb8bec3943bf610b2b8077b5"
+      },
+      "mocha-web": {
+        "git": "https://github.com/mad-eye/meteor-mocha-web.git",
+        "tag": "v0.0.1",
+        "commit": "1edfc84969fcdd3edc05c4a31668199276594ab5"
       },
       "page-js": {
         "git": "https://github.com/tmeasday/meteor-page-js.git",
