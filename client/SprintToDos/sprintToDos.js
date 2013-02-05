@@ -8,3 +8,18 @@ Template.sprintToDos.userType = function(){
 //add todos (input form)
 //display todos (list)
 //integrate todos with sprints (split out according to which sprints they're associated with)
+
+Template.toDosStudentView.toDoItems = function(){
+	return Sprints.find();
+}
+
+Template.toDosAdminView.sprints = function(){
+	return Sprints.find();
+}
+
+Template.toDosAdminView.events({
+	'submit': function(event){
+		//event.preventDefault
+	}
+})
+
