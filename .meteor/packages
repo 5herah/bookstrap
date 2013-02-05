@@ -8,5 +8,6 @@ insecure
 preserve-inputs
 underscore
 showdown
+accounts-github
 mini-pages
 mocha-web
