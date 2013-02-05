@@ -2,6 +2,7 @@
   "packages": {
     "marked": {},
     "router": {},
-    "mini-pages": {}
+    "mini-pages": {},
+    "mocha-web": {}
   }
 }

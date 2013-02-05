@@ -1,5 +1,6 @@
 Meteor.pages({
   '/'                     : { to: 'home', as: 'root' },
   '/curriculum'           : { to: 'curriculumlist' },
-  '/curriculum/:filename' : { to: 'curriculumfile' }
+  '/curriculum/:filename' : { to: 'curriculumfile' },
+  '/tests'                : { to: 'tests' }
 });
