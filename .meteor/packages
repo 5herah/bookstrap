@@ -8,4 +8,6 @@ insecure
 preserve-inputs
 underscore
 showdown
-router
+accounts-github
+mini-pages
+mocha-web

@@ -2,5 +2,13 @@
 </head>
 
 <body>
-  {{renderPage}}
+  {{{yield}}}
 </body>
+
+
+<template name="home">
+</template>
+
+<template name="tests">
+  {{> mochaTestReport}}
+</template>
