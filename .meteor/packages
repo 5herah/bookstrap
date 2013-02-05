@@ -8,4 +8,8 @@ insecure
 preserve-inputs
 underscore
 showdown
+<<<<<<< HEAD
 accounts-github
+=======
+mini-pages
+>>>>>>> 638e607ca50440daa785932a9fc5dd6c52161f2d
