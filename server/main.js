@@ -4,7 +4,7 @@ Meteor.methods({
     return text;
   },
   getDirContentsSync: function (directory) {
-    var list = fs.readdirSync(directory, 'utf-8').join();
+    var list = fs.readdirSync(directory, 'utf-8');
     return list;
   }
 });
