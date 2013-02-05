@@ -5,3 +5,6 @@ Template.sprintToDos.userType = function(){
   //it will determine which view is served for the todo app.
 }
 
+//add todos (input form)
+//display todos (list)
+//integrate todos with sprints (split out according to which sprints they're associated with)

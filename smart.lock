@@ -6,13 +6,30 @@
   },
   "dependencies": {
     "basePackages": {
-      "marked": {}
+      "marked": {},
+      "router": {},
+      "mini-pages": {}
     },
     "packages": {
       "marked": {
         "git": "https://github.com/chuangbo/meteor-marked.git",
         "tag": "v0.2.5",
         "commit": "e435075a3fd4bc9103cb713e8c400b54d4d704fe"
+      },
+      "router": {
+        "git": "https://github.com/tmeasday/meteor-router.git",
+        "tag": "v0.3.5",
+        "commit": "e8e63db2411204f0a6589b74dd591babbfb2da1a"
+      },
+      "mini-pages": {
+        "git": "https://github.com/cmather/meteor-mini-pages.git",
+        "tag": "v0.2.3",
+        "commit": "dcf77ccca21508a1eb8bec3943bf610b2b8077b5"
+      },
+      "page-js": {
+        "git": "https://github.com/tmeasday/meteor-page-js.git",
+        "tag": "v1.3.3",
+        "commit": "c1e9832af3fc2b2f5139a16d93a82ca6fa0655da"
       }
     }
   }
