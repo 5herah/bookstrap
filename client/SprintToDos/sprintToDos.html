@@ -1,16 +1,18 @@
-<template name="sprintToDos">
-	{{#if currentUser}}
+<head>
+</head>
 
-	{{/if}}
+<body>
+	{{> sprintToDos}}
+</body>
 
-	{{#unless currentUser}}
-	
-</template>
+	<template name="sprintToDos">
+		{{loginButtons}}
+	</template>
 
-<template name="toDosAdminView">
+	<template name="toDosAdminView">
+		AdminView
+	</template>
 
-</template>
-
-<template name="toDosStudentView">
-
-</template>
+	<template name="toDosStudentView">
+		StudentView
+	</template>
