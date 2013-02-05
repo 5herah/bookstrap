@@ -1,6 +1,7 @@
 {
   "packages": {
     "marked": {},
-    "router": {}
+    "router": {},
+    "mini-pages": {}
   }
 }
