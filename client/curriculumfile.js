@@ -1,12 +1,9 @@
 Template.curriculumfile.getMarkdown = function () {
-  var filename = 'grapheme.md'
-  var text = '';
+  var path = window.location.pathname
+  var filename = path.split('/').slice(-1);
   Meteor.call('getFileSync', 'public/readmes/' + filename, function (error, result) {
-    text = result;
-    console.log(text)
     Session.set('fileText', result)
   });
-  return text;
 };
 
 Template.curriculumfile.displayMarkdown = function () {
