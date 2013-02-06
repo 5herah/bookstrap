@@ -7,5 +7,6 @@ Template.curriculumfile.getMarkdown = function () {
 };
 
 Template.curriculumfile.displayMarkdown = function () {
-  return Session.get('fileText');
+  var text = Session.get('fileText');
+  return text ? text : "No README found for this repo.";
 };
