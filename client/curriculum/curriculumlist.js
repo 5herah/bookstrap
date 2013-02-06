@@ -1,5 +1,5 @@
 Template.curriculumlist.getListings = function () {
-  Meteor.call('getDirContentsSync', 'public/readmes', function (error, result) {
+  Meteor.call('getDirContentsSync', 'assets/readmes', function (error, result) {
     Session.set('dirContents', result)
   });
 };
