@@ -2,8 +2,6 @@
 </head>
 
 <body>
-  {{{yield}}}
-  {{> sprintToDos}}
 </body>
 
 <template name="layout">
@@ -13,6 +11,7 @@
       <ul class="nav">
         <li class="{{navClassFor 'home'}}"><a href="/">Home</a></li>
         <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
+        <li class="{{navClassFor 'todos'}}"><a href="/sprintToDos">To-Dos</a></li>
       </ul>
     </div>
   </div>
