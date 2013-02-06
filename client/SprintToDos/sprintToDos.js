@@ -10,16 +10,28 @@ Template.sprintToDos.userType = function(){
 //integrate todos with sprints (split out according to which sprints they're associated with)
 
 Template.toDosStudentView.toDoItems = function(){
-	return Sprints.find();
+	return Sprints.find({},{sort: {sprint: 1}});
 }
 
 Template.toDosAdminView.sprints = function(){
-	return Sprints.find();
+	return Sprints.find({},{sort: {sprint: 1}});
 }
 
 Template.toDosAdminView.events({
 	'submit': function(event){
-		//event.preventDefault
+		event.preventDefault();
+		var theSprints = $("option:selected").map(function(){ 
+			return this.value 
+		}).get();
+
+		
+		_.each(theSprints, function(val){
+			//trying to find the toDo item of the sprint #[val]
+			var insertedToDo = Sprints.find({sprint: parseInt(val)},{toDoItem: 1});
+			console.log(insertedToDo);
+		  insertedToDo.push($('#theToDoItem').val());
+			Sprints.update({sprint:parseInt(val)},{$set: {toDoItem:insertedToDo}});
+		})
 	}
 })
 

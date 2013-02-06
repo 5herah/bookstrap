@@ -7,7 +7,7 @@ if (Meteor.isServer) {
       "Edit the ten commandments. Bonus point if there are now ten."
     ];
     for (var i = 0; i < toDoItems.length; i++) {
-      Sprints.insert({sprint: [i], toDoItem: toDoItems[i]});
+      Sprints.insert({sprint: i, toDoItem: toDoItems[i]});
     }
   });
 }
