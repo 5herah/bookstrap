@@ -10,6 +10,8 @@ underscore
 showdown
 accounts-ui
 accounts-github
+accounts-ui
+mini-pages
 mini-pages
 mocha-web
 bootstrap
