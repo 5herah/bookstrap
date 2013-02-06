@@ -1,0 +1,49 @@
+#name {
+
+}
+
+#phone {
+
+}
+
+#email {
+
+}
+
+#blog {
+
+}
+
+#handle {
+
+}
+
+.classList {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.studentName {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.studentPhone {
+  border: 1px solid black;
+  display: inline-block;  
+}
+
+.studentEmail {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.studentBlog {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.studentHandle {
+  border: 1px solid black;
+  display: inline-block;
+}

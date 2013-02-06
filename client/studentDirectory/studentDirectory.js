@@ -1,4 +1,6 @@
 Template.profileInfo.profileStuff = function(){
+  console.log('twitc')
+  return Profiles.find().fetch()
   var name;
   if(Session.get('profile')) {
     name = Profiles.findOne({_id: Session.get('profile')}).name;
@@ -17,13 +19,18 @@ Template.profileInfo.events({
   // },
   'click .submit' : function(e){
     e.preventDefault();
-    var name  = document.getElementById('name').value;
-    var phone = document.getElementById('phone').value;
-    var email = document.getElementById('e-mail').value;
+    var name   = document.getElementById('name').value;
+    var phone  = document.getElementById('phone').value;
+    var email  = document.getElementById('email').value;
+    var blog   = document.getElementById('blog').value;
+    var handle = document.getElementById('handle').value;
+
     var profileId = Profiles.insert({ 
-      name  : name,
-      phone : phone,
-      email : email
+      name   : name,
+      phone  : phone,
+      email  : email,
+      blog   : blog,
+      handle : handle
     });
   }
 });

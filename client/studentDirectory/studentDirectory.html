@@ -2,11 +2,33 @@
   <form>
     <input type="text" id="name" placeholder="Name"/>
     <input type="text" id="phone" placeholder="phone"/>
-    <input type="text" id="e-mail" placeholder="e-mail"/>
-    <input type="button" class="submit"/>
+    <input type="text" id="email" placeholder="e-mail"/>
+    <input type="text" id="blog" placeholder="blog"/>
+    <input type="text" id="handle" placeholder="@YourTwitter"/>
+
+    <input type="button" class="submit" value="Submit"/>
   </form>
 
-  <div class="student">
-    {{profileStuff}}
-  </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Blog</th>
+          <th>Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each profileStuff}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.phone}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.blog}}</td>
+          <td>{{this.handle}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
 </template>
