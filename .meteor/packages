@@ -9,4 +9,7 @@ preserve-inputs
 underscore
 showdown
 accounts-ui
+accounts-github
 mini-pages
+mocha-web
+bootstrap

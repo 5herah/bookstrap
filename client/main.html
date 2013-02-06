@@ -2,9 +2,30 @@
 </head>
 
 <body>
-  {{{yield}}}
 </body>
 
+<template name="layout">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <a class="brand" href="/">Bookstrap</a>
+      <ul class="nav">
+        <li class="{{navClassFor 'home'}}"><a href="/">Home</a></li>
+        <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
+        <li class="{{navClassFor 'directory'}}"><a href="/directory">Directory</a></li>
+      </ul>
+    </div>
+  </div>
+  {{{yield}}}
+</template>
 
 <template name="home">
+  This is the homepage.
+</template>
+
+<template name="not_found">
+  404 Not found.
+</template>
+
+<template name="tests">
+  {{> mochaTestReport}}
 </template>
