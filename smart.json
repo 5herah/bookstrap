@@ -1,6 +1,5 @@
 {
   "packages": {
-    "marked": {},
     "router": {},
     "mini-pages": {},
     "mocha-web": {}
