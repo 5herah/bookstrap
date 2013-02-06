@@ -1,0 +1,32 @@
+<template name='curriculummain'>
+  <div class="well">
+    <table class="table table-bordered">
+      <tbody>
+        <thead>
+          <th>Name</th>
+          <th>README</th>
+          <th>Other Notes</th>
+          <th>Delete</th>
+        </thead>
+        {{#each reposList}}
+          <tr>
+            <td>{{name}}</td>
+            <td><a href="/curriculum/{{name}}.md">README.md</a></td>
+            <td></td>
+            <td><button id="deleterepo" class="btn btn-danger">X</button></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <form>
+      <input id="newreponame" type="text" placeholder="New repo name"></input>
+      <button id="newreposubmit" type="button" class="btn btn-primary" value="submit">Create New Repo</button>
+    </form>
+  </div>
+  <div class="well">
+    Here's what's coming up this week...
+    (weekly calendar excerpt here from calendar branch)
+  </div>
+</template>
