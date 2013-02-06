@@ -1,16 +1,9 @@
-<head>
-</head>
-
-<body>
-	<div class="container">
-		{{> sprintToDos}}
-	</div>
-</body>
-
 	<template name="sprintToDos">
+		<div class="container">
 		{{loginButtons}}
 		{{> toDosAdminView}}
 		{{> toDosStudentView}}
+	  </div>
 	</template>
 
 	<template name="toDosAdminView">
