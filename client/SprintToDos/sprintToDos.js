@@ -27,8 +27,8 @@ Template.toDosAdminView.events({
 		
 		_.each(theSprints, function(val){
 			//trying to find the toDo item of the sprint #[val]
-			var insertedToDo = Sprints.find({sprint: parseInt(val)},{toDoItem: 1});
-			console.log(insertedToDo);
+			var insertedToDo = [];
+			insertedToDo.push(Sprints.findOne({sprint: parseInt(val)},{toDoItem: 1}).toDoItem);
 		  insertedToDo.push($('#theToDoItem').val());
 			Sprints.update({sprint:parseInt(val)},{$set: {toDoItem:insertedToDo}});
 		})
