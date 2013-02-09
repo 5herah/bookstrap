@@ -1,6 +1,5 @@
 	<template name="sprintToDos">
 		<div class="container">
-		{{loginButtons}}
 		{{> toDosAdminView}}
 		{{> toDosStudentView}}
 	  </div>
@@ -28,7 +27,9 @@
 			<thead>
 		    <th>Sprint:</th>
 		    <th>To-Do:</th>
+		    {{#if student}}
 		    <th>Done</th>
+		    {{/if}}
 		  </thead>
 		  {{#each toDos}}
 		  <tr>
