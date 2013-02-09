@@ -1,12 +1,21 @@
 Sprints
 * Name    :   String
-* Todos   :   Array
+* Date    :   Date()
+
+ToDos
+* SprintID		:	_id
+* Description	:	String
 
 Reflections
-* 
+* SprintID			:	_id
+* ReflectionType	:	String
+* Student			:	_id
+* Date				:	Date()
 
-//filter sprints by date (before this date for student) in student view
+Profiles
+* Role		:	String
 
-//admin view would have no checkboxes
-
-//completions collection for each student which stores the checked off todo items
+Completions
+* SprintID		:	_id
+* ToDoID		:	_id
+* Date			:	Date()
