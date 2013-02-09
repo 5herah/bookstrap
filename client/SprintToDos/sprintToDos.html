@@ -11,11 +11,11 @@
 		  <fieldset>
 		    <legend>Add a to-do item</legend>
 		    <label>To Do:</label>
-		    <input type="text">
-		    <span class="help-block">Select the sprint to add this to-do to. You can select more than one sprint.</span>
-		    <select multiple="multiple">
+		    <input type="text" id="theToDoItem">
+		    <span class="help-block">Select the sprint to add this to-do to. You can select more than one sprint (use cmd + click).</span>
+		    <select multiple="multiple" id="multiple">
 		    	{{#each sprints}}
-				  <option>Sprint #{{sprint}}</option>
+				  <option>{{sprintName}}</option>
 				  {{/each}}
 				</select>
 		    <button type="submit" class="btn">Submit</button>
@@ -28,11 +28,19 @@
 			<thead>
 		    <th>Sprint:</th>
 		    <th>To-Do:</th>
+		    <th>Done</th>
 		  </thead>
-		  {{#each toDoItems}}
+		  {{#each toDos}}
 		  <tr>
-		  	<td>{{sprint}}</td>
-		  	<td>{{toDoItem}}</td>
+		  	<td>{{sprintName}}</td>
+		  	<td>
+		  		<p>{{description}}</p><br>
+    		</td>
+    		<td>
+    			<label class="checkbox">
+    				<input type="checkbox" class="donebox">
+  				</label>
+    		</td>
 		  </tr>
 		  {{/each}}
 		</table>

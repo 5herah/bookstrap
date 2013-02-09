@@ -1,25 +1,40 @@
-//todo: return the user flag to use for determining which view (student or admin) to serve
-
-Template.sprintToDos.userType = function(){
-  //todo: return the userType, which is a flag that denotes whether this user is an admin or a student.
-  //it will determine which view is served for the todo app.
-}
-
-//add todos (input form)
-//display todos (list)
-//integrate todos with sprints (split out according to which sprints they're associated with)
-
-Template.toDosStudentView.toDoItems = function(){
-	return Sprints.find();
+Template.toDosStudentView.toDos = function(){
+	return ToDos.find({},{sort: {sprintName: 1}});
 }
 
 Template.toDosAdminView.sprints = function(){
-	return Sprints.find();
+	return Sprints.find({},{sort: {sprint: 1}});
 }
 
 Template.toDosAdminView.events({
 	'submit': function(event){
-		//event.preventDefault
+		event.preventDefault();
+
+		var chosenSprintNames = [];
+
+		$("#multiple :selected").each(function() {
+      chosenSprintNames.push($(this).text());
+    });
+
+		console.log($('#theToDoItem').val());
+
+		var theSprintIDs = $.map(chosenSprintNames, function(value){	
+			  var theID = Sprints.findOne({sprintName:value}, {_id:1})._id;
+
+			  var newToDo = {sprintID: theID, sprintName: value, description: $('#theToDoItem').val()};
+			  ToDos.insert(newToDo);
+
+		});
+		},
+})
+
+Template.toDosStudentView.events({
+	'click .donebox': function(event){
+		var row = event.target.parentElement.parentElement.parentElement;
+		$(row).hide();
+
+		//todo: remove this todo item from the user's todo items list (figure out how we are to handle the todos per user)
+
 	}
 })
 
