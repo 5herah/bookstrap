@@ -36,11 +36,13 @@
 		  	<td>
 		  		<p>{{description}}</p><br>
     		</td>
+    		{{#if student}}
     		<td>
     			<label class="checkbox">
     				<input type="checkbox" class="donebox">
   				</label>
     		</td>
+    		{{/if}}
 		  </tr>
 		  {{/each}}
 		</table>
