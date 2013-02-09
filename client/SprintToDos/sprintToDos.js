@@ -25,8 +25,16 @@ Template.toDosAdminView.events({
 			  ToDos.insert(newToDo);
 
 		});
-		
-		
+		},
+})
+
+Template.toDosStudentView.events({
+	'click .donebox': function(event){
+		var row = event.target.parentElement.parentElement.parentElement;
+		$(row).hide();
+
+		//todo: remove this todo item from the user's todo items list (figure out how we are to handle the todos per user)
+
 	}
 })
 

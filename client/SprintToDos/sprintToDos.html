@@ -28,11 +28,19 @@
 			<thead>
 		    <th>Sprint:</th>
 		    <th>To-Do:</th>
+		    <th>Done</th>
 		  </thead>
 		  {{#each toDos}}
 		  <tr>
 		  	<td>{{sprintName}}</td>
-		  	<td><p>{{description}}</p><br></td>
+		  	<td>
+		  		<p>{{description}}</p><br>
+    		</td>
+    		<td>
+    			<label class="checkbox">
+    				<input type="checkbox" class="donebox">
+  				</label>
+    		</td>
 		  </tr>
 		  {{/each}}
 		</table>
