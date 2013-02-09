@@ -8,5 +8,6 @@ Meteor.pages({
   '/directory'            : { to: 'profileInfo', nav: 'directory' },
   '/sprintToDos'          : { to: 'sprintToDos', nav: 'todos' },
   '/tests'                : { to: 'tests' },
+  '/reflections'          : { to: 'reflections' },
   '*'                     : { to: 'not_found' }
 });

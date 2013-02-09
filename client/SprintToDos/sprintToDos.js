@@ -24,6 +24,8 @@ Template.toDosAdminView.events({
 			  var newToDo = {sprintID: theID, sprintName: value, description: $('#theToDoItem').val()};
 			  ToDos.insert(newToDo);
 
+			  //todo: figure out if a todo item has already been added for this sprint and don't allow it to be duplicated
+
 		});
 		},
 })
