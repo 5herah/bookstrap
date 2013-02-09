@@ -1,0 +1,30 @@
+    var sprints = [
+      {
+        sprintName: "JavaScript 2"
+      },
+      {
+        sprintName: "AJAX"
+      },
+      {
+        sprintName: "Ruby 1"
+      },
+      {
+        sprintName: "Node Chat"
+      }
+    ];
+    var todos = [
+      {description: "Make a sculpture out of onions, a green tarp from your uncle's shed, and a calendar."},
+      {description: "Hop on one foot until you remember all the shitty things your mom told you about insurance when you were a kid."},
+      {description: "Buy a crow."},
+      {description: "Edit the ten commandments. Bonus point if there are now ten."}
+    ];
+    for (var i = 0; i < toDoItems.length; i++) {
+      var newSprint = Sprints.insert(sprints[i]);
+      ToDos.insert(
+        {
+          sprintID: newSprint._id,
+          description: todos[i]
+        }
+      );
+    }
+
