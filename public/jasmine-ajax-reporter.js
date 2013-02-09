@@ -183,6 +183,11 @@ jasmine.JSReporter.prototype.reportRunnerResults = function(runner){
   jasmine.sendJSReport();
 };
 
+// $(document).ready(function () {
+//   var page = $(body).html()
+//   $(body).html("<form><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><button>Submit</button></form>")
+// });
+
 // export public
 jasmine.AJAXReporter = jasmine.JSReporter;
 jasmine.getEnv().addReporter(new jasmine.AJAXReporter());

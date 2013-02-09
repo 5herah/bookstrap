@@ -1,5 +1,8 @@
-Meteor.Router.add('/specreports', 'POST', function (data) {
-  var data = this.request.body;
+Meteor.Router.add('/specreports', 'POST', function () {
+  var data = this.request.body.suites;
   console.log(data);
-  SpecResults.insert({lastresults: data.suites});
+  var formattedObj = {}
+  // formattedObj.
+
+  SpecResults.insert(data);
 });

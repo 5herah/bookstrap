@@ -1,0 +1,11 @@
+<template name="specdashboard">
+  <div class="row-fluid">
+    {{#each studentStations}}
+      <div>
+        {{#each individualSpecs}}
+          <span class='passing-{{this.test.passed}}'>X</span>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+</template>
