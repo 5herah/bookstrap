@@ -5,16 +5,18 @@
 </body>
 
 <template name="layout">
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <a class="brand" href="/">Bookstrap</a>
-      <ul class="nav">
-        <li class="{{navClassFor 'home'}}"><a href="/">Home</a></li>
-        <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
-      </ul>
+  <div class="container-fluid">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="brand" href="/">Bookstrap</a>
+        <ul class="nav">
+          <li class="{{navClassFor 'home'}}"><a href="/">Home</a></li>
+          <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
+        </ul>
+      </div>
     </div>
+    {{{yield}}}
   </div>
-  {{{yield}}}
 </template>
 
 <template name="home">

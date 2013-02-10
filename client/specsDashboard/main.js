@@ -3,7 +3,7 @@ Template.specdashboard.studentStations = function () {
   return result;
 }
 
-Template.specdashboard.individualSpecs = function () {
+Template.specdashboard.suites = function () {
   var id = this._id
   var resultObj = SpecResults.findOne({_id: this._id}, {$sort: {timestamp: -1}});
   var suitesArr = _.map(resultObj.suites, function (suite, key, object) {

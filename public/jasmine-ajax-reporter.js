@@ -200,7 +200,7 @@ jasmine.getEnv().addReporter(new jasmine.AJAXReporter());
 // require user login to run tests
 $(document).ready(function () {
   if(!sessionStorage.loggedin){
-    $('body').append("<form><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><input id='loginsubmit' type='submit'></input></form>")
+    $('body').prepend("<form><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><input id='loginsubmit' type='submit'></input></form>")
   }
 
   $('#loginsubmit').on('click', function (e) {
