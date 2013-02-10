@@ -4,5 +4,6 @@ Meteor.pages({
   '/curriculum/:filename' : { to: 'curriculumfile', nav: 'curriculum' },
   '/tests'                : { to: 'tests' },
   '/specdashboard'        : { to: 'specdashboard', nav: 'specdashboard' },
+  '/prdashboard'          : { to: 'prdashboard', nav: 'prdashboard' },
   '*'                     : { to: 'not_found' }
 });

@@ -1,4 +1,8 @@
 <head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+    google.load("elements", "1", {packages : ["newsshow"]});
+  </script>
 </head>
 
 <body>
@@ -11,6 +15,8 @@
       <ul class="nav">
         <li class="{{navClassFor 'home'}}"><a href="/">Home</a></li>
         <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
+        <li class="{{navClassFor 'specdashboard'}}"><a href="/specdashboard">Spec Watcher</a></li>
+        <li class="{{navClassFor 'prdashboard'}}"><a href="/prdashboard">Media Watcher</a></li>
       </ul>
     </div>
   </div>
