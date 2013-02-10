@@ -3,16 +3,17 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-autopublish
 insecure
 preserve-inputs
 underscore
 showdown
-accounts-ui
-accounts-github
-accounts-ui
-mini-pages
 mini-pages
 mocha-web
 bootstrap
 font-awesome
+router
+moment
+accounts-base
+accounts-ui
+accounts-github
+accounts-google

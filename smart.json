@@ -3,6 +3,7 @@
     "router": {},
     "mini-pages": {},
     "mocha-web": {},
-    "font-awesome": {}
+    "font-awesome": {},
+    "moment": {}
   }
 }

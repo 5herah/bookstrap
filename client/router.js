@@ -1,7 +1,4 @@
 Meteor.pages({
-  '/'                     : { to: 'home', as: 'root' },
-  '/curriculum'           : { to: 'curriculumlist' },
-  '/curriculum/:filename' : { to: 'curriculumfile' },
   '/'                     : { to: 'home', as: 'root', nav: 'home'},
   '/curriculum'           : { to: 'curriculumlist', nav: 'curriculum' },
   '/curriculum/:filename' : { to: 'curriculumfile', nav: 'curriculum' },
@@ -10,5 +7,7 @@ Meteor.pages({
   '/tests'                : { to: 'tests' },
   '/reflections'          : { to: 'reflections' },
   '/settings'             : { to: 'settings' },
+  '/specdashboard'        : { to: 'specdashboard', nav: 'specdashboard' },
+  '/calendar'             : { to: 'calendar', nav: 'calendar' },
   '*'                     : { to: 'not_found' }
 });

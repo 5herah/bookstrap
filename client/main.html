@@ -5,6 +5,7 @@
 </body>
 
 <template name="layout">
+<<<<<<< HEAD
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <a class="brand" href="/">Bookstrap</a>
@@ -15,9 +16,24 @@
         <li class="{{navClassFor 'reflections'}}"><a href="/reflections">Reflections</a></li>
         <li class="{{navClassFor 'settings'}}"><a href="/settings">Settings</a></li>
       </ul>
+=======
+  <div class="container-fluid">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="brand" href="/">Bookstrap</a>
+        <ul class="nav">
+          <li class="{{navClassFor 'home'}}"><a href="/">Home</a></li>
+          <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
+          <li class="{{navClassFor 'directory'}}"><a href="/directory">Directory</a></li>
+          <li class="{{navClassFor 'todos'}}"><a href="/sprintToDos">To-Dos</a></li>
+          <li class="{{navClassFor 'reflections'}}"><a href="/reflections">Reflections</a></li>
+          <li class="{{navClassFor 'calendar'}}"><a href="/calendar">Calendar</a></li>
+        </ul>
+      </div>
+>>>>>>> 4341feef1b63628474da1640a6755cfda5435fb7
     </div>
+    {{{yield}}}
   </div>
-  {{{yield}}}
 </template>
 
 <template name="home">
