@@ -185,6 +185,11 @@ jasmine.JSReporter.prototype.reportRunnerResults = function (runner) {
   };
   if(sessionStorage.loggedin) {
     jasmine.sendJSReport();
+    $('body').prepend("<div>Logged in as [" + sessionStorage.user1 + " " + sessionStorage.user2 + "]</div><div><button id='logout'>Logout Current Students</button></div>");
+    $('#logout').on('click', function (e) {
+      sessionStorage.clear();
+      history.go(0);
+    })
   }
 };
 
@@ -195,18 +200,18 @@ jasmine.getEnv().addReporter(new jasmine.AJAXReporter());
 // require user login to run tests
 $(document).ready(function () {
   if(!sessionStorage.loggedin){
-    $(document.body).html("<form><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><input id='loginsubmit' type='submit'></input></form>")
+    $('body').append("<form><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><input id='loginsubmit' type='submit'></input></form>")
   }
 
   $('#loginsubmit').on('click', function (e) {
     e.preventDefault();
+    history.go(0);
     sessionStorage.clear();
     sessionStorage.user1 = $('#student1').val();
     sessionStorage.user2 = $('#student2').val();
     if(sessionStorage.user1 || sessionStorage.user2){
       sessionStorage.loggedin = true;
       jasmine.getEnv().execute();
-      $(document.body).prepend("<button id='logout'>Logout Current Students</button>");
     } else {
       console.log('Please enter at least one GitHub username.')
     }
