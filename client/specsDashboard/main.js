@@ -1,12 +1,13 @@
 Template.specdashboard.studentStations = function () {
-  return SpecResults.find().fetch();
+  var result = SpecResults.find().fetch();
+  return result;
 }
 
 Template.specdashboard.individualSpecs = function () {
+  var id = this._id
   var resultObj = SpecResults.findOne({_id: this._id}, {$sort: {timestamp: -1}});
-  var resultArr = _.map(resultObj, function (value, key, object) {
-    return {_id: object._id, test: value};
+  var suitesArr = _.map(resultObj.suites, function (suite, key, object) {
+    return {_id: id, suite: suite};
   });
-  console.log(resultObj);
-  return resultArr
+  return suitesArr;
 }

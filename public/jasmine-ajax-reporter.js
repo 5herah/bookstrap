@@ -176,7 +176,6 @@ jasmine.JSReporter.prototype.reportRunnerResults = function(runner){
   jasmine.sendJSReport = function () {
     var data = jasmine.getJSReport();
     data.users = jasmine.users
-    console.log(data);
     $.post('http://localhost:3000/specreports/testdata', data, function () {
       console.log('Data sent.');
     });

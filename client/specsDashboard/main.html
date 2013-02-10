@@ -2,9 +2,9 @@
   <div class="row-fluid">
     {{#each studentStations}}
       <div>
-        <span>{{this.users}}</span>
+        {{users}}
         {{#each individualSpecs}}
-          <span class='passing-{{this.test.passed}}'>X</span>
+          <span class='passing-{{this.suite.passed}}'>X</span>
         {{/each}}
       </div>
     {{/each}}
