@@ -175,12 +175,14 @@ jasmine.JSReporter.prototype.reportRunnerResults = function(runner){
   original.apply(this, arguments);
   jasmine.sendJSReport = function () {
     var data = jasmine.getJSReport();
-    data.users = jasmine.users
+    data.users = [];
+    data.users.push(localStorage.user1)
+    data.users.push(localStorage.user2)
     $.post('http://localhost:3000/specreports/testdata', data, function () {
       console.log('Data sent.');
     });
   };
-  if(jasmine.loggedin) {
+  if(localStorage.loggedin) {
     jasmine.sendJSReport();
   }
 };
@@ -192,15 +194,14 @@ jasmine.getEnv().addReporter(new jasmine.AJAXReporter());
 // require user login to run tests
 $(document).ready(function () {
   var page = $(document.body).html()
-  $(document.body).html("<form action='http://localhost:3000/specreports/users'><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><input id='loginsubmit' type='submit'></input></form>")
+  $(document.body).html("<form><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><input id='loginsubmit' type='submit'></input></form>")
 
   $('#loginsubmit').on('click', function (e) {
     e.preventDefault();
-    jasmine.users = []
-    jasmine.users.push($('#student1').val());
-    jasmine.users.push($('#student2').val());
-    if(jasmine.users.length > 0){
-      jasmine.loggedin = true;
+    localStorage.user1 = $('#student1').val();
+    localStorage.user2 = $('#student2').val();
+    if(localStorage.user1 || localStorage.user2){
+      localStorage.loggedin = true;
       jasmine.getEnv().execute();
     } else {
       console.log('Please enter at least one GitHub username.')
