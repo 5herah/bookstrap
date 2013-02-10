@@ -1,0 +1,49 @@
+<template name="profileInfo">
+  <form class="form-inline">
+    <div class="wrapper">
+      <div class="controls">
+        <input class="span5" type="text" id="name" placeholder="Name" required/>
+      </div>
+      <div class="controls controls-row">
+        <input class="span2" type="tel" id="phone" placeholder="Phone" required/>
+        <input class="span3" type="email" id="email" placeholder="E-Mail" required/>
+      </div>
+      <div class="controls controls-row">
+        <input class="span2"type="text" id="blog" placeholder="Blog" required/>
+        <input class="span3" type="text" id="handle" placeholder="@twitter" required/>
+      </div>
+
+      <div class="controls-row">
+        <button type="submit" class="btn" id="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  {{> table}}
+</template>
+
+<template name="table">
+    <div class="student-table">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Blog</th>
+          <th>Twitter</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each profileStuff}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.phone}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.blog}}</td>
+          <td>{{this.handle}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
