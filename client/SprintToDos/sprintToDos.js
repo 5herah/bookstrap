@@ -41,6 +41,6 @@ Template.toDosStudentView.events({
 })
 
 Template.toDosStudentView.helpers({
-	student: function(){return true;}
+	student: function(){return false;}
 });
 
