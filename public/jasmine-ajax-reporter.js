@@ -179,7 +179,7 @@ jasmine.JSReporter.prototype.reportRunnerResults = function (runner) {
     data.users = [];
     data.users.push(sessionStorage.user1)
     data.users.push(sessionStorage.user2)
-    $.post('http://localhost:3000/specreports/testdata', data, function () {
+    $.post('http://localhost:3000/specreports/jasmine', data, function () {
       console.log('Data sent.');
     });
   };

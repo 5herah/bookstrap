@@ -3,3 +3,5 @@ Handlebars.registerHelper('navClassFor', function (nav, options) {
 });
 
 Meteor.subscribe('userData');
+
+Meteor.subscribe('specresults');
