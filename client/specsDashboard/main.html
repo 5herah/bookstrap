@@ -1,0 +1,28 @@
+<template name="specdashboard">
+  <div class="row-fluid">
+    <div class="span12"></div>
+    {{#each studentStations}}
+      <div class="span11 well well-small">
+        <div class="span7">
+          <table class="table table-bordered table-condensed">
+            <thead>
+              <th>Student Usernames</th>
+              <th>Tests</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{users}}</td>
+                {{#each suites}}
+                  <td>
+                    <span class='passing-{{this.suite.passed}}'>X</span>
+                  </td>
+                {{/each}}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="span4">Last tested: {{this.timestamp}}</div>
+      </div>
+    {{/each}}
+  </div>
+</template>
