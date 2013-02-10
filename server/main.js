@@ -21,3 +21,7 @@ Meteor.publish("profiles", function () {
 Meteor.publish("specresults", function () {
   return SpecResults.find({});
 });
+
+Meteor.publish("sprints", function () {
+  return Sprints.find({}, {fields: {secretInfo: 0}});
+});

@@ -5,13 +5,9 @@ Meteor.pages({
   '/directory'            : { to: 'profileInfo', nav: 'directory' },
   '/sprintToDos'          : { to: 'sprintToDos', nav: 'todos' },
   '/tests'                : { to: 'tests' },
-<<<<<<< HEAD
   '/reflections'          : { to: 'reflections' },
   '/settings'             : { to: 'settings' },
-=======
   '/specdashboard'        : { to: 'specdashboard', nav: 'specdashboard' },
-  '/reflections'          : { to: 'reflections', nav: 'reflections'},
-  '/addSprint'            : { to: 'addSprint', nav: 'addSprint' },
->>>>>>> 4341feef1b63628474da1640a6755cfda5435fb7
+  '/calendar'             : { to: 'calendar', nav: 'calendar' },
   '*'                     : { to: 'not_found' }
 });
