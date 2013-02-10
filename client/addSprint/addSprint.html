@@ -1,0 +1,24 @@
+<template name="calendar">
+  <div class="container">
+    <form class="form-inline">
+      <div class="wrapper">
+        <div class="controls controls-row">
+          <input class="span5" type="text" id="sprintName" placeholder="Sprint Name" required/>
+        </div>
+
+        <div class="controls controls-row">
+          <input class=".input-medium"type="date" id="startDate" placeholder="Start date" required/>
+          <input type="time" value="12:01:00;" id="startTime">
+        </div>
+        <div class="controls controls-row">
+          <input class=".input-medium" type="date" id="endDate" placeholder="End Date" required/>
+          <input type="time" value="12:01:00;" id="endTime">
+        </div>
+
+        <div class="controls-row">
+          <button type="submit" class="btn" id="submit">Submit</button>
+        </div>
+      </div>
+    </form>    
+  </div>
+</template>

@@ -9,7 +9,7 @@
       "router": {},
       "mini-pages": {},
       "mocha-web": {},
-      "marked": {}
+      "moment": {}
     },
     "packages": {
       "router": {
@@ -27,10 +27,10 @@
         "tag": "v0.0.1",
         "commit": "1edfc84969fcdd3edc05c4a31668199276594ab5"
       },
-      "marked": {
-        "git": "https://github.com/chuangbo/meteor-marked.git",
-        "tag": "v0.2.5",
-        "commit": "e435075a3fd4bc9103cb713e8c400b54d4d704fe"
+      "moment": {
+        "git": "https://github.com/possibilities/meteor-moment.git",
+        "tag": "v1.7.0",
+        "commit": "c64b6ec0e714b9556f4b6643d430b868ba69d3d7"
       },
       "page-js": {
         "git": "https://github.com/tmeasday/meteor-page-js.git",
