@@ -175,6 +175,7 @@ jasmine.JSReporter.prototype.reportRunnerResults = function(runner){
   original.apply(this, arguments);
   jasmine.sendJSReport = function () {
     var data = jasmine.getJSReport();
+    data.users = jasmine.users
     console.log(data);
     $.post('http://localhost:3000/specreports/testdata', data, function () {
       console.log('Data sent.');
@@ -196,13 +197,10 @@ $(document).ready(function () {
 
   $('#loginsubmit').on('click', function (e) {
     e.preventDefault();
-    var data = {}
-    data.student1 = $('#student1').val();
-    data.student2 = $('#student2').val();
-    if(data.student1 || data.student2){
-      $.post('http://localhost:3000/specreports/users', data, function () {
-        console.log('Data sent.');
-      });
+    jasmine.users = []
+    jasmine.users.push($('#student1').val());
+    jasmine.users.push($('#student2').val());
+    if(jasmine.users.length > 0){
       jasmine.loggedin = true;
       jasmine.getEnv().execute();
     } else {
