@@ -5,6 +5,12 @@ Template.reflections.events({
 		var sprintAssessing = $('option:selected').text();
 		$('.sprintReflectionTitle').html('<h3>' + sprintAssessing + '</h3>');
 	},
+
+	'click .sprintGoBackButton' : function(){
+		$('.reflectionBoxes').toggle('hide');
+		$('.sprintReflectionChoices').toggle('show');
+	},
+
 	'click #submitPreReflection' : function(event){
 		event.preventDefault();
 		var sprintAssessing = $('option:selected').text();
@@ -21,6 +27,7 @@ Template.reflections.events({
 			postDate:	Date()
 		});
 	},
+
 	'click #submitPostReflection' : function(event){
 		event.preventDefault();
 		var sprintAssessing = $('option:selected').text();
@@ -37,6 +44,7 @@ Template.reflections.events({
 			postDate:	Date()
 		});
 	},
+
 	'click #submitPeerReflection' : function(event){
 		event.preventDefault();
 		var sprintAssessing = $('option:selected').text();

@@ -2,6 +2,7 @@
   "packages": {
     "router": {},
     "mini-pages": {},
-    "mocha-web": {}
+    "mocha-web": {},
+    "font-awesome": {}
   }
 }

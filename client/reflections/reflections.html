@@ -10,13 +10,17 @@
 	  <button type="submit" class="btn sprintToReflectOn">Submit</button>
 	  </div>
 
-	  <div class="row-fluid reflectionBoxes">
-	  <div class="sprintReflectionTitle"></div>
-	  <div class="row-fluid">
-	  {{> preReflection}}
-	  {{> postReflection}}
-	  {{> pairReflection}}
-	  </div>
+	  <span class="reflectionBoxes">
+		  <div class="row-fluid">
+		  	<span class="span1"><button class="btn sprintGoBackButton" type="button"><i class="icon-reply"></i></button></span>
+		    <div class="sprintReflectionTitle span3"></div>
+		  </div>
+			  <div class="row-fluid">
+			  {{> preReflection}}
+			  {{> postReflection}}
+			  {{> pairReflection}}
+			  </div>
+	  </span>
 	</div>
 </template>
 
