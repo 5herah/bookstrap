@@ -5,6 +5,7 @@ Meteor.Router.add('/specreports/testdata', 'POST', function () {
   data.timestamp = Date.now();
   if (SpecResults.findOne({users: data.users})) {
     SpecResults.update({users: data.users}, {users: data.users, suites: data.suites, timestamp: this.timestamp});
+    console.log(data.suites)
   } else {
     SpecResults.insert({users: data.users, suites: data.suites, timestamp: this.timestamp});
   }

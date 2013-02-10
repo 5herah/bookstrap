@@ -171,18 +171,19 @@ and adds functionality to send JSON results to a server endpoint.
 */
 
 var original = jasmine.JSReporter.prototype.reportRunnerResults;
-jasmine.JSReporter.prototype.reportRunnerResults = function(runner){
+jasmine.JSReporter.prototype.reportSpecResults = function () {}
+jasmine.JSReporter.prototype.reportRunnerResults = function (runner) {
   original.apply(this, arguments);
   jasmine.sendJSReport = function () {
     var data = jasmine.getJSReport();
     data.users = [];
-    data.users.push(localStorage.user1)
-    data.users.push(localStorage.user2)
+    data.users.push(sessionStorage.user1)
+    data.users.push(sessionStorage.user2)
     $.post('http://localhost:3000/specreports/testdata', data, function () {
       console.log('Data sent.');
     });
   };
-  if(localStorage.loggedin) {
+  if(sessionStorage.loggedin) {
     jasmine.sendJSReport();
   }
 };
@@ -193,16 +194,19 @@ jasmine.getEnv().addReporter(new jasmine.AJAXReporter());
 
 // require user login to run tests
 $(document).ready(function () {
-  var page = $(document.body).html()
-  $(document.body).html("<form><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><input id='loginsubmit' type='submit'></input></form>")
+  if(!sessionStorage.loggedin){
+    $(document.body).html("<form><input id='student1' type='text' placeholder='GitHub Username 1'></input><input id='student2' type='text' placeholder='GitHub Username 2'></input><input id='loginsubmit' type='submit'></input></form>")
+  }
 
   $('#loginsubmit').on('click', function (e) {
     e.preventDefault();
-    localStorage.user1 = $('#student1').val();
-    localStorage.user2 = $('#student2').val();
-    if(localStorage.user1 || localStorage.user2){
-      localStorage.loggedin = true;
+    sessionStorage.clear();
+    sessionStorage.user1 = $('#student1').val();
+    sessionStorage.user2 = $('#student2').val();
+    if(sessionStorage.user1 || sessionStorage.user2){
+      sessionStorage.loggedin = true;
       jasmine.getEnv().execute();
+      $(document.body).prepend("<button id='logout'>Logout Current Students</button>");
     } else {
       console.log('Please enter at least one GitHub username.')
     }
