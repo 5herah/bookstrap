@@ -1,3 +1,5 @@
+Meteor.subscribe("profiles");
+
 Template.table.profileStuff = function(){
   return Profiles.find().fetch()
 };
