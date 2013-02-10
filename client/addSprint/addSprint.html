@@ -1,4 +1,4 @@
-<template name="addSprint">
+<template name="calendar">
   <div class="container">
     <form class="form-inline">
       <div class="wrapper">
@@ -8,7 +8,11 @@
 
         <div class="controls controls-row">
           <input class=".input-medium"type="date" id="startDate" placeholder="Start date" required/>
+          <input type="time" value="12:01:00;" id="startTime">
+        </div>
+        <div class="controls controls-row">
           <input class=".input-medium" type="date" id="endDate" placeholder="End Date" required/>
+          <input type="time" value="12:01:00;" id="endTime">
         </div>
 
         <div class="controls-row">

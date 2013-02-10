@@ -1,16 +1,24 @@
+Meteor.subscribe('sprints');
+
 Accounts.ui.config({requestPermissions: {google: 
   ['https://www.googleapis.com/auth/calendar',
   'https://www.googleapis.com/auth/userinfo.profile',
   'https://www.googleapis.com/auth/tasks']}}, {requestOfflineToken: {google: true}});
 
-Template.addSprint.events({
+Template.calendar.events({
   'click .btn' : function(e){
     e.preventDefault();
     var sprintName   = document.getElementById('sprintName').value;
     var startDate  = document.getElementById('startDate').value;
     var endDate  = document.getElementById('endDate').value;
+    var startTime = document.getElementById('startTime').value;
+    var endTime = document.getElementById('endTime').value;
 
-    var fecha = { "start" : startDate, "end" : endDate }
+    var fecha = { "start" : startDate + "T" + startTime, "end" : endDate + "T" + endTime }
+
+    console.log(fecha);
+
+    // Sprints.insert({ name : sprintName, start : startDate + "T" + startTime, end : endDate })
 
     gCal.insertEvent(sprintName, fecha)
   }
@@ -23,10 +31,10 @@ var gCal = {
     event = {
       summary: summary,
       start: {
-        "date": fecha.start
+        "dateTime": fecha.start
       },
       end: {
-        "date": fecha.end
+        "dateTime": fecha.end
       }
     };
     eventData = JSON.stringify(event);
