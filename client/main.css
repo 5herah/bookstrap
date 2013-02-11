@@ -1,5 +1,38 @@
 body{
-	padding:20px;
+	padding:10px 20px;
 	font-size: 115%;
+	color:#666;
+	font-family:"Quattrocento Sans";
 }
+
+a{
+	color:#666;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.main-icon{
+
+}
+
+.brand p{
+	font-size: 200%;
+	font-family: Brawler;
+	padding:5px 0 10px 0;
+	font-weight: bolder;
+}
+
+.logobox{
+	height:50px;
+	width:50px;
+	background-color: #ccc;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+color: #ffffff;
+background-color: #888;
+}
+
 
