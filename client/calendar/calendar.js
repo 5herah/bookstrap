@@ -15,8 +15,6 @@ Template.calendar.events({
 
     var fecha = { "start" : startDate + "T" + startTime + ":00-08:00", "end" : startDate + "T" + endTime + ":00-08:00" }
 
-    console.log(fecha);
-
     var newSprintId = Sprints.insert({ name : sprintName, fecha: fecha })
 
     gCal.insertEvent(sprintName, fecha, function(calendarEvent){
@@ -59,4 +57,3 @@ var gCal = {
     });
   }
 };
-
