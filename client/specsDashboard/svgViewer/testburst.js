@@ -1,9 +1,10 @@
 var renderTestburst = function (testJSON) {
 
-  var w = 250,
-      h = 250,
+  var w = 150,
+      h = 150,
       r = Math.min(w, h) / 2,
-      color = d3.scale.category20c();
+      color = d3.scale.ordinal().domain([0,1]).range(["DD2222","22AA22"])
+      // color = d3.scale.category20c();
 
   var selector = ".testburst-"+testJSON.users[0];
       console.log(selector)
