@@ -10,22 +10,25 @@ Template.calendar.events({
     e.preventDefault();
     var sprintName   = document.getElementById('sprintName').value;
     var startDate  = document.getElementById('startDate').value;
-    var endDate  = document.getElementById('endDate').value;
-    var startTime = document.getElementById('startTime').value;
-    var endTime = document.getElementById('endTime').value;
+    var startTime = "09:00"
+    var endTime = "20:00"
 
-    var fecha = { "start" : startDate + "T" + startTime + ":00.00Z", "end" : endDate + "T" + endTime + ":00.00Z" }
+    var fecha = { "start" : startDate + "T" + startTime + ":00-08:00", "end" : startDate + "T" + endTime + ":00-08:00" }
 
     console.log(fecha);
 
-    // Sprints.insert({ name : sprintName, start : startDate + "T" + startTime, end : endDate })
+    var newSprintId = Sprints.insert({ name : sprintName, fecha: fecha })
 
-    gCal.insertEvent(sprintName, fecha)
+    gCal.insertEvent(sprintName, fecha, function(calendarEvent){
+      Sprints.update({_id: newSprintId}, {$set:{
+        calendarEventId: calendarEvent.id
+      }});
+    });
   }
 });
 
 var gCal = {
-  insertEvent: function(summary, fecha) {
+  insertEvent: function(summary, fecha, callback) {
     var Auth, event, eventData, url;
     url = "https://www.googleapis.com/calendar/v3/calendars/primary/events";
     event = {
@@ -50,9 +53,9 @@ var gCal = {
       headers: {
         'Authorization': Auth
       }
-      }, function(err, result) {
-        console.log(result);
-        return result.id;
+    }, function(err, result) {
+      console.log(result);
+      callback(result.data);
     });
   }
 };
