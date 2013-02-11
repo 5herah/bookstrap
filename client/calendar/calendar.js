@@ -14,13 +14,13 @@ Template.calendar.events({
     var startTime = document.getElementById('startTime').value;
     var endTime = document.getElementById('endTime').value;
 
-    var fecha = { "start" : startDate + "T" + startTime, "end" : endDate + "T" + endTime }
+    var fecha = { "start" : startDate + "T" + startTime + ":00.00Z", "end" : endDate + "T" + endTime + ":00.00Z" }
 
     console.log(fecha);
 
     // Sprints.insert({ name : sprintName, start : startDate + "T" + startTime, end : endDate })
 
-    // gCal.insertEvent(sprintName, fecha)
+    gCal.insertEvent(sprintName, fecha)
   }
 });
 
