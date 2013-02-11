@@ -3,8 +3,12 @@ Template.d3specdashboard.studentStations = function () {
   return result;
 };
 
-Template.d3specdashboard.rendered = function () {
-  var latestReport = SpecResults.findOne({}, {$sort: {timestamp: -1}});
+Template.d3report.rendered = function () {
+  if(this.data.users) {
+    console.log(this.data.users[0])
+    var latestReport = SpecResults.findOne({users: this.data.users}, {$sort: {timestamp: -1}});
+    console.log(latestReport)
+  }
   if(latestReport) {
     JSONScrubber(latestReport);
     renderTestburst(latestReport);
@@ -21,8 +25,13 @@ var JSONScrubber = function (reportJSON) {
       parent.children = childvalue;
     }
     if(typeof(childvalue) === "object"){
-      console.log(childvalue)
       JSONScrubber(childvalue)
     }
   });
 };
+
+Template.d3report.usernames = function () {
+  if(this.users){
+    return this.users[0]
+  }
+}

@@ -2,14 +2,18 @@
   <div class="row-fluid">
     <div class="span12"></div>
     {{#each studentStations}}
-      <div class="span11 well well-small">
-        <div class="span7">
-          <div class="testburst">
-            This is a station.
-          </div>
+      <div class="span3 well well-small">
+        <div>{{this.users}}</div>
+        <div class="span12">
+          {{> d3report}}
         </div>
-        <div class="span4">Last tested: {{this.timestamp}}</div>
+        <div>Last tested: {{this.timestamp}}</div>
       </div>
     {{/each}}
+  </div>
+</template>
+
+<template name="d3report">
+  <div class="testburst-{{usernames}}">
   </div>
 </template>

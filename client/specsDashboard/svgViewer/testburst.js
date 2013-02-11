@@ -1,11 +1,14 @@
 var renderTestburst = function (testJSON) {
 
-  var w = 480,
-      h = 350,
+  var w = 250,
+      h = 250,
       r = Math.min(w, h) / 2,
       color = d3.scale.category20c();
 
-  var vis = d3.select(".testburst").append("svg:svg")
+  var selector = ".testburst-"+testJSON.users[0];
+      console.log(selector)
+
+  var vis = d3.select(selector).append("svg:svg")
       .attr("width", w)
       .attr("height", h)
     .append("svg:g")
