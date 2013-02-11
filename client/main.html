@@ -5,8 +5,10 @@
 </body>
 
 <template name="layout">
+  <div class="row">
+    <div class="span3">
       <a class="brand" href="/">Bookstrap</a>
-      <ul class="nav nav-tabs nav-stacked">
+      <ul class="nav nav-list">
         <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
         <li class="{{navClassFor 'directory'}}"><a href="/directory">Directory</a></li>
         <li class="{{navClassFor 'todos'}}"><a href="/sprintToDos">To-Dos</a></li>
@@ -14,9 +16,11 @@
         <li class="{{navClassFor 'settings'}}"><a href="/settings">Settings</a></li>
         <li class="{{navClassFor 'calendar'}}"><a href="/calendar">Calendar</a></li>
       </ul>
-    
+    </div>
+    <div class="span9">
     {{{yield}}}
-  
+    </div>
+  </div>
 </template>
 
 <template name="home">
