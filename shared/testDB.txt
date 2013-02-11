@@ -28,5 +28,3 @@ for (var i = 0; i < sprints.length; i++) {
   );
 }
 
-
-
