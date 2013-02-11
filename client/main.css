@@ -1,12 +1,18 @@
 body{
-	padding:10px 20px;
+	margin: 10px 20px;
 	font-size: 115%;
 	color:#666;
 	font-family:"Quattrocento Sans";
+	background: url('/debut_light.png');
 }
 
 a{
 	color:#666;
+}
+
+.container, .well{
+	background-color: #fff;
+	padding:10px;
 }
 
 a:hover{
@@ -22,12 +28,15 @@ a:hover{
 	font-family: Brawler;
 	padding:5px 0 10px 0;
 	font-weight: bolder;
+	margin-top:10px;
 }
 
-.logobox{
-	height:50px;
-	width:50px;
-	background-color: #ccc;
+.container-fluid, .container{
+	border-radius: 5px;
+}
+
+.navspan{
+	background: url('/debut_light.png');
 }
 
 .nav-pills > .active > a, .nav-pills > .active > a:hover {
@@ -35,4 +44,25 @@ color: #ffffff;
 background-color: #888;
 }
 
+.siteNav{
+	background-color: #f0f0f0;
+	padding:8px;
+}
+
+select{
+	margin-bottom:0;
+}
+
+.logobox{
+	float: left;
+	padding: 0 10px;
+	font-family: "Stint Ultra Expanded";
+	font-weight: bold;
+	font-size: 150%;
+	margin-right: 15px;
+}
+
+.mainIcon{
+	padding:0 10px;
+}
 

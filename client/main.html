@@ -1,33 +1,48 @@
 <head>
-  <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Brawler' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Brawler|Stint+Ultra+Expanded' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 </body>
 
 <template name="layout">
-  <div class="row">
-    <div class="span3">
-      <div class="logobox"></div>
-      <a class="brand" href="/"><br><p>BookStrap</p></a>
-      <ul class="nav nav-pills nav-stacked">
-        <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
-        <li class="{{navClassFor 'directory'}}"><a href="/directory">Directory</a></li>
-        <li class="{{navClassFor 'todos'}}"><a href="/sprintToDos">To-Dos</a></li>
-        <li class="{{navClassFor 'reflections'}}"><a href="/reflections">Reflections</a></li>
-        <li class="{{navClassFor 'settings'}}"><a href="/settings">Settings</a></li>
-        <li class="{{navClassFor 'calendar'}}"><a href="/calendar">Calendar</a></li>
-      </ul>
-    </div>
-    <div class="span1"></div>
-    <div class="span8">
-    {{{yield}}}
-    </div>
+  <div class="navbar navbar-fixed-top siteNav">
+    <div class="logobox"><i class="icon-reorder icon-large mainIcon"></i>BookStrap</div>
+    {{> siteNav}}
+  </div>
+  <div class="container">
+  {{{yield}}}
   </div>
 </template>
 
+<template name="siteNav">
+  <ul class="nav nav-pills">
+    {{#unless isHome}}
+    <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
+    <li class="{{navClassFor 'directory'}}"><a href="/directory">Directory</a></li>
+    <li class="{{navClassFor 'todos'}}"><a href="/sprintToDos">To-Dos</a></li>
+    <li class="{{navClassFor 'reflections'}}"><a href="/reflections">Reflections</a></li>
+    <li class="{{navClassFor 'settings'}}"><a href="/settings">Settings</a></li>
+    <li class="{{navClassFor 'calendar'}}"><a href="/calendar">Calendar</a></li>
+    {{/unless}}
+  </ul>
+</template>
+
 <template name="home">
-  This is the homepage.
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span6"><i class="icon-camera-retro icon-4x"></i>Curriculum</div>
+      <div class="span6"><i class="icon-camera-retro icon-4x"></i>Directory</div>
+    </div>
+    <div class="row-fluid">
+      <div class="span6"><i class="icon-camera-retro icon-4x"></i>To-Dos</div>
+      <div class="span6"><i class="icon-camera-retro icon-4x"></i>Reflections</div>
+    </div>
+    <div class="row-fluid">
+      <div class="span6"><i class="icon-camera-retro icon-4x"></i>Calendar</div>
+      <div class="span6"><i class="icon-camera-retro icon-4x"></i>Other Things</div>
+    </div>
+  </div>
 </template>
 
 <template name="not_found">
