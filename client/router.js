@@ -5,7 +5,8 @@ Meteor.pages({
   '/directory'            : { to: 'profileInfo', nav: 'directory' },
   '/sprintToDos'          : { to: 'sprintToDos', nav: 'todos' },
   '/tests'                : { to: 'tests' },
-  '/specdashboard'        : { to: 'specdashboard', nav: 'specdashboard' },
+  '/specdashboard/basic'  : { to: 'basicspecdashboard', nav: 'specdashboard' },
+  '/specdashboard/d3'     : { to: 'd3specdashboard', nav: 'specdashboard' },
   '/reflections'          : { to: 'reflections', nav: 'reflections'},
   '/addSprint'            : { to: 'addSprint', nav: 'addSprint' },
   '*'                     : { to: 'not_found' }
