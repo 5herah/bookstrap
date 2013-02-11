@@ -15,6 +15,9 @@
                 {{#each suites}}
                   <td>
                     <span class='passing-{{this.suite.passed}}'>X</span>
+                    {{#each specs}}
+                      <span>{{this.passed}}</span>
+                    {{/each}}
                   </td>
                 {{/each}}
               </tr>
