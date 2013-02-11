@@ -18,7 +18,7 @@ var todos = [
   {description: "Buy a crow."},
   {description: "Edit the ten commandments. Bonus point if there are now ten."}
 ];
-for (var i = 0; i < toDoItems.length; i++) {
+for (var i = 0; i < sprints.length; i++) {
   var newSprint = Sprints.insert(sprints[i]);
   ToDos.insert(
     {
