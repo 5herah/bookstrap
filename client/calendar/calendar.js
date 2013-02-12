@@ -5,6 +5,33 @@ Accounts.ui.config({requestPermissions: {google:
   'https://www.googleapis.com/auth/userinfo.profile',
   'https://www.googleapis.com/auth/tasks']}}, {requestOfflineToken: {google: true}});
 
+Template.sprints.sprint = function () {
+  // var array = Sprints.find().fetch();
+  // var orderArray = _.map(array, function(sprint){
+  //   return sprint.sprintOrder
+  // })
+  // console.log(_.max(orderArray));
+  // console.log(_.min(orderArray));
+  return Sprints.find({}, {sort: {sprintOrder: 1}});
+};
+
+
+Template.sprints.events({
+  'click .icon-arrow-up' : function(e){
+    e.preventDefault();
+    if(Sprints.find({_id: this._id}).fetch()[0].sprintOrder > 0) {
+      Sprints.update({_id: this._id}, {$inc: {sprintOrder: -1}})
+    }
+    
+  },
+  'click .icon-arrow-down' : function(e){
+    e.preventDefault();
+    Sprints.update({_id: this._id}, {$inc: {sprintOrder: 1}})
+    
+  }
+})
+
+
 Template.calendar.events({
   'click .btn' : function(e){
     e.preventDefault();

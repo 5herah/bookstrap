@@ -29,3 +29,4 @@ Meteor.publish("sprints", function () {
 Meteor.publish("todos", function () {
   return Sprints.find({}, {fields: {secretInfo: 0}});
 });
+

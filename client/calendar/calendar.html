@@ -16,6 +16,20 @@
           <button type="submit" class="btn" id="submit">Create Sprint</button></br>
         </div>
       </div>
-    </form>    
+    </form> 
   </div>
+  {{> sprints}}
+</template>
+
+<template name="sprints">
+    <h3>Sprints</h3>
+    <div class="sprintName">
+      {{#each sprint}}
+        {{name}}
+          <div class="arrows">
+            <i class="icon-arrow-up"></i>
+            <i class="icon-arrow-down"></i>
+          </div>
+      {{/each}}
+    </div>
 </template>
