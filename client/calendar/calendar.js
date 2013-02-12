@@ -1,13 +1,13 @@
 Meteor.subscribe('sprints');
 
-Accounts.ui.config({requestPermissions: {google: 
+Accounts.ui.config({requestPermissions: {google:
   ['https://www.googleapis.com/auth/calendar',
   'https://www.googleapis.com/auth/userinfo.profile',
   'https://www.googleapis.com/auth/tasks']}}, {requestOfflineToken: {google: true}});
 
 
 Template.sprints.sprint = function () {
-  return Sprints.find({}, {sort: {sprintOrder: 1}});
+  return Calendar.find({}, {sort: {sprintOrder: 1}});
 };
 
 Template.sprints.events({
@@ -15,19 +15,19 @@ Template.sprints.events({
     e.preventDefault();
 
     if( this.sprintOrder !== 1){
-      Sprints.update({sprintOrder: this.sprintOrder - 1}, {$inc: {sprintOrder: 1}})
-      Sprints.update({_id: this._id}, {$inc: {sprintOrder: -1}})    
+      Calendar.update({sprintOrder: this.sprintOrder - 1}, {$inc: {sprintOrder: 1}});
+      Calendar.update({_id: this._id}, {$inc: {sprintOrder: -1}});
     }
   },
 
   'click .icon-arrow-down' : function(e){
     e.preventDefault();
-    var sprintsLength = Sprints.find().fetch().length;
+    var sprintsLength = Calendar.find().fetch().length;
 
     if( this.sprintOrder !==  sprintsLength ) {
-      Sprints.update({sprintOrder: this.sprintOrder + 1}, {$inc: {sprintOrder: -1}})
-      Sprints.update({_id: this._id}, {$inc: {sprintOrder: +1}})    
-    };
+      Calendar.update({sprintOrder: this.sprintOrder + 1}, {$inc: {sprintOrder: -1}});
+      Calendar.update({_id: this._id}, {$inc: {sprintOrder: +1}});
+    }
   }
 });
 
@@ -37,16 +37,16 @@ Template.calendar.events({
     e.preventDefault();
     var sprintName   = document.getElementById('sprintName').value;
     var startDate  = document.getElementById('startDate').value;
-    var startTime = "09:00"
-    var endTime = "20:00"
-    var fecha = { "start" : startDate + "T" + startTime + ":00-08:00", "end" : startDate + "T" + endTime + ":00-08:00" }
-    var newSprintId = Sprints.insert({ name : sprintName, fecha: fecha })
+    var startTime = "09:00";
+    var endTime = "20:00";
+    var fecha = { "start" : startDate + "T" + startTime + ":00-08:00", "end" : startDate + "T" + endTime + ":00-08:00" };
+    var newSprintId = Calendar.insert({ name : sprintName, fecha: fecha });
 
-    var sprints = Sprints.find().fetch();
-    Sprints.update({_id: newSprintId}, {$set:{sprintOrder: sprints.length}})
+    var sprints = Calendar.find().fetch();
+    Calendar.update({_id: newSprintId}, {$set:{sprintOrder: sprints.length}});
 
     gCal.insertEvent(sprintName, fecha, function(calendarEvent){
-      Sprints.update({_id: newSprintId}, {$set:{
+      Calendar.update({_id: newSprintId}, {$set:{
         calendarEventId: calendarEvent.id
       }});
     });
@@ -84,4 +84,8 @@ var gCal = {
       callback(result.data);
     });
   }
+};
+
+Template.sprints.formattedDate = function () {
+  return moment(this.fecha.start).format('MMMM Do YYYY, dddd, h:mm:ss a');
 };

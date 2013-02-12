@@ -13,3 +13,5 @@ Meteor.subscribe('specresults');
 Meteor.subscribe('todos');
 
 Meteor.subscribe('sprints');
+
+Meteor.subscribe('calendar');
