@@ -21,16 +21,15 @@
 </template>
 
 <template name="sprints">
-    <h3>Sprints</h3>
+    <h2>Sprints</h2>
     <div class="sprintName">
-      {{#each sprint}}
-        {{name}}
-        {{sprintOrder}}
-          <div class="arrows">
-            <i class="icon-arrow-up"></i>
-            <i class="icon-arrow-down"></i>
-          </div>
-      {{/each}}
+        {{#each sprint}}
+          {{name}}
+            <div class="arrows">
+              <i class="icon-arrow-up"></i>
+              <i class="icon-arrow-down"></i>
+            </div>
+       {{/each}}
     </div>
     </form>
 </template>
