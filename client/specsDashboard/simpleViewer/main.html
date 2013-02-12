@@ -1,4 +1,4 @@
-<template name="specdashboard">
+<template name="basicspecdashboard">
   <div class="row-fluid">
     <div class="span12"></div>
     {{#each studentStations}}
@@ -15,6 +15,11 @@
                 {{#each suites}}
                   <td>
                     <span class='passing-{{this.suite.passed}}'>X</span>
+                    {{#each specs}}
+                      <div>
+                        <span class="passing-{{this.passed}}">x</span>
+                      </div>
+                    {{/each}}
                   </td>
                 {{/each}}
               </tr>

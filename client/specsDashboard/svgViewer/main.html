@@ -1,0 +1,22 @@
+<template name="d3specdashboard">
+  <div class="container">
+    <div class="pageTitle"><h3>Live Monitor</h3></div>
+    <div class="row-fluid">
+      <div class="span12"></div>
+      {{#each studentStations}}
+        <div class="span2 well well-small">
+          <div>{{this.users}}</div>
+          <div class="span12">
+            {{> d3report}}
+          </div>
+          <div>Last tested: {{this.timestamp}}</div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="d3report">
+  <div class="testburst-{{usernames}}">
+  </div>
+</template>

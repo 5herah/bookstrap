@@ -5,9 +5,10 @@ Meteor.pages({
   '/directory'            : { to: 'profileInfo', nav: 'directory' },
   '/sprintToDos'          : { to: 'sprintToDos', nav: 'todos' },
   '/tests'                : { to: 'tests' },
-  '/reflections'          : { to: 'reflections' },
+  '/specdashboard/basic'  : { to: 'basicspecdashboard', nav: 'specdashboard' },
+  '/specdashboard/d3'     : { to: 'd3specdashboard', nav: 'specdashboard' },
+  '/reflections'          : { to: 'reflections', nav: 'reflections'},
   '/settings'             : { to: 'settings' },
-  '/specdashboard'        : { to: 'specdashboard', nav: 'specdashboard' },
   '/calendar'             : { to: 'calendar', nav: 'calendar' },
   '*'                     : { to: 'not_found' }
 });
