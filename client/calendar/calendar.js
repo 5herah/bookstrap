@@ -5,6 +5,33 @@ Accounts.ui.config({requestPermissions: {google:
   'https://www.googleapis.com/auth/userinfo.profile',
   'https://www.googleapis.com/auth/tasks']}}, {requestOfflineToken: {google: true}});
 
+
+Template.sprints.sprint = function () {
+  return Sprints.find({}, {sort: {sprintOrder: 1}});
+};
+
+Template.sprints.events({
+  'click .icon-arrow-up' : function(e){
+    e.preventDefault();
+
+    if( this.sprintOrder !== 1){
+      Sprints.update({sprintOrder: this.sprintOrder - 1}, {$inc: {sprintOrder: 1}})
+      Sprints.update({_id: this._id}, {$inc: {sprintOrder: -1}})    
+    }
+  },
+
+  'click .icon-arrow-down' : function(e){
+    e.preventDefault();
+    var sprintsLength = Sprints.find().fetch().length;
+
+    if( this.sprintOrder !==  sprintsLength ) {
+      Sprints.update({sprintOrder: this.sprintOrder + 1}, {$inc: {sprintOrder: -1}})
+      Sprints.update({_id: this._id}, {$inc: {sprintOrder: +1}})    
+    };
+  }
+});
+
+
 Template.calendar.events({
   'click .btn' : function(e){
     e.preventDefault();
@@ -12,10 +39,11 @@ Template.calendar.events({
     var startDate  = document.getElementById('startDate').value;
     var startTime = "09:00"
     var endTime = "20:00"
-
     var fecha = { "start" : startDate + "T" + startTime + ":00-08:00", "end" : startDate + "T" + endTime + ":00-08:00" }
-
     var newSprintId = Sprints.insert({ name : sprintName, fecha: fecha })
+
+    var sprints = Sprints.find().fetch();
+    Sprints.update({_id: newSprintId}, {$set:{sprintOrder: sprints.length}})
 
     gCal.insertEvent(sprintName, fecha, function(calendarEvent){
       Sprints.update({_id: newSprintId}, {$set:{
