@@ -22,22 +22,21 @@
 </template>
 
 <template name="sprints">
-    <h4>Sprints</h4>
-    <table class="sprintName table table-bordered">
-      <thead>
-        <th>Sprint Name</th>
-        <th>Date</th>
-        <th>Move Up</th>
-        <th>Move Down</th>
-      </thead>
-        {{#each sprint}}
-            <tr class="arrows">
-              <td>{{name}}</td>
-              <td>{{formattedDate}}</td>
-              <td class="span2"><a href=''><i class="icon-arrow-up"></i></a></td>
-              <td class="span2"><a href=''><i class="icon-arrow-down"></i></a></td>
-            </tr>
-       {{/each}}
-    </div>
-    </form>
+  <table class="sprintName table table-bordered">
+    <thead>
+      <th>Sprint Name</th>
+      <th>Date</th>
+      <th>Move Up</th>
+      <th>Move Down</th>
+    </thead>
+      {{#each sprint}}
+        <tr class="arrows">
+          <td>{{name}}</td>
+          <td>{{formattedDate}}</td>
+          <td class="span2"><a href=''><i class="icon-arrow-up"></i></a></td>
+          <td class="span2"><a href=''><i class="icon-arrow-down"></i></a></td>
+        </tr>
+     {{/each}}
+   </table>
+  </div>
 </template>
