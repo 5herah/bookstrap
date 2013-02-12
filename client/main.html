@@ -8,11 +8,31 @@
 <template name="layout">
   <div class="navbar navbar-fixed-top siteNav">
     <div class="logobox"><i class="icon-reorder icon-large mainIcon"></i><a href="/"><span class="red">Book</span>Strap</a></div>
-    {{> siteNav}}
-  </div>
+      {{> siteNav}}
+    </div>
 
   {{{yield}}}
 
+    <div id="settingsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="myModalLabel">Modal Heading</h3>
+      </div>
+      <div class="modal-body">
+        <span class="pull-right">
+          {{loginButtons align="right"}}
+        </span>
+        <h3>Log in as:</h3>
+        <label class="radio">
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          Student
+        </label>
+        <label class="radio">
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Admin
+        </label>
+      </div>
+    </div>
 </template>
 
 <template name="siteNav">
@@ -27,7 +47,7 @@
     {{/unless}}
   </ul>
   <ul class="utilsUL">
-    <li><a href="/settings"><i class="icon-cog"></i></a></li>
+    <li><a data-toggle="modal" href="#settingsModal"><i class="icon-cog"></i></a></li>
     <li><a href="/notifications"><i class="icon-bell"></i></a></li>
   </ul>
 </template>

@@ -58,30 +58,30 @@ color: #ffffff;
 background-color: #888;
 }
 
-.siteNav{
+.siteNav {
 	background-color: #f0f0f0;
 	padding:8px;
 }
 
-select{
+select {
 	margin-bottom:0;
 }
 
-.frontBox{
+.frontBox {
 	padding:15px;
 	line-height: 200%;
 }
 
-.frontBox:hover{
+.frontBox:hover {
 	background-color: #fff;
 	color: #de5d56;
 }
 
-.frontBox:hover a{
+.frontBox:hover a {
 	color: #de5d56;
 }
 
-.logobox{
+.logobox {
 	float: left;
 	padding: 0 10px;
 	font-family: "Stint Ultra Expanded";
@@ -90,11 +90,11 @@ select{
 	margin-right: 15px;
 }
 
-.mainIcon{
+.mainIcon {
 	padding:0 10px;
 }
 
-.red{
+.red {
 	color: #de5d56;
 }
 
@@ -103,12 +103,12 @@ ul, ol {
 	margin: 0 0 0px 25px;
 }
 
-.utilsUL{
+.utilsUL {
 	float:right;
 	list-style-type: none;
 }
 
-.utilsUL li, .utilsUL li a{
+.utilsUL li, .utilsUL li a {
 	float:left;
 	padding: 5px 10px;
 	color: #de5d56;
@@ -118,9 +118,13 @@ ul, ol {
 	color:#777;
 }
 
-.siteCopy{
+.siteCopy {
 	text-align: justify;
 	margin-top:40px;
 	border-top:2px #ddd solid;
 	border-bottom:2px #ddd solid;
+}
+
+.modal-body {
+	min-height: 200px;
 }
