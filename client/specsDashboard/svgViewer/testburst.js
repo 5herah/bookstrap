@@ -7,7 +7,6 @@ var renderTestburst = function (testJSON) {
       // color = d3.scale.category20c();
 
   var selector = ".testburst-"+testJSON.users[0];
-      console.log(selector)
 
   var vis = d3.select(selector).append("svg:svg")
       .attr("width", w)
@@ -32,6 +31,7 @@ var renderTestburst = function (testJSON) {
       .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
       .attr("d", arc)
       .attr("fill-rule", "evenodd")
+      .attr("text", function(d) { return d.description })
       .style("stroke", "#fff")
       .style("fill", function(d) { return color((d.children ? d : d.parent).passed); })
 
@@ -45,4 +45,21 @@ var renderTestburst = function (testJSON) {
       return arc(b);
     };
   }
+
+  // Add tooltips with suite/test description
+  var tooltip = d3.selectAll(selector + " path")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .text(function(d) { return "d.description" });
+
+  d3.selectAll(selector + " path")
+    .attr("stroke", "black")
+    .attr("r", 50)
+    .attr("cx", 52)
+    .attr("cy", 52)
+    .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+    .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+    .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 }

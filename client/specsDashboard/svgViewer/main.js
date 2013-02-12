@@ -5,9 +5,7 @@ Template.d3specdashboard.studentStations = function () {
 
 Template.d3report.rendered = function () {
   if(this.data.users) {
-    console.log(this.data.users[0])
     var latestReport = SpecResults.findOne({users: this.data.users}, {$sort: {timestamp: -1}});
-    console.log(latestReport)
   }
   if(latestReport) {
     JSONScrubber(latestReport);
