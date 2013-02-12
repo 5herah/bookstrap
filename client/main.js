@@ -11,3 +11,5 @@ Meteor.subscribe('userData');
 Meteor.subscribe('specresults');
 
 Meteor.subscribe('todos');
+
+Meteor.subscribe('calendar');
