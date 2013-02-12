@@ -9,6 +9,7 @@
       "router": {},
       "mini-pages": {},
       "mocha-web": {},
+      "font-awesome": {},
       "moment": {}
     },
     "packages": {
@@ -27,6 +28,11 @@
         "tag": "v0.0.1",
         "commit": "1edfc84969fcdd3edc05c4a31668199276594ab5"
       },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v0.1.2",
+        "commit": "f68badb67341b4a4c83d7f449a4e985613ff63d5"
+      },
       "moment": {
         "git": "https://github.com/possibilities/meteor-moment.git",
         "tag": "v1.7.0",
@@ -36,6 +42,11 @@
         "git": "https://github.com/tmeasday/meteor-page-js.git",
         "tag": "v1.3.3",
         "commit": "c1e9832af3fc2b2f5139a16d93a82ca6fa0655da"
+      },
+      "bootstrap-updated": {
+        "git": "https://github.com/Charuru/bootstrap-updated.git",
+        "tag": "v1.0.1",
+        "commit": "bdd5fcc8e134e62bcbb9d11aad8270534ffb6493"
       }
     }
   }

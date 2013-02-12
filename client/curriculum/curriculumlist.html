@@ -1,14 +1,17 @@
 <template name="curriculumlist">
-  <div class="well">
-    {{getListings}}
-    <table class="table table-bordered">
-      <tbody>
-        {{#each displayListings}}
-          <tr>
-            <td><a href="/curriculum/{{.}}">{{.}}</a></td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+  <div class="container">
+    <div class="pageTitle"><h3>Curriculum Links</h3></div>
+    <div class="well">
+      {{getListings}}
+      <table class="table table-bordered">
+        <tbody>
+          {{#each displayListings}}
+            <tr>
+              <td><a href="/curriculum/{{.}}">{{.}}</a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>

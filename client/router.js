@@ -8,6 +8,7 @@ Meteor.pages({
   '/specdashboard/basic'  : { to: 'basicspecdashboard', nav: 'specdashboard' },
   '/specdashboard/d3'     : { to: 'd3specdashboard', nav: 'specdashboard' },
   '/reflections'          : { to: 'reflections', nav: 'reflections'},
-  '/addSprint'            : { to: 'addSprint', nav: 'addSprint' },
+  '/settings'             : { to: 'settings' },
+  '/calendar'             : { to: 'calendar', nav: 'calendar' },
   '*'                     : { to: 'not_found' }
 });

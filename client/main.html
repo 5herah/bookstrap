@@ -1,30 +1,67 @@
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Brawler|Stint+Ultra+Expanded' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 </body>
 
 <template name="layout">
-  <div class="container-fluid">
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <a class="brand" href="/">Bookstrap</a>
-        <ul class="nav">
-          <li class="{{navClassFor 'home'}}"><a href="/">Home</a></li>
-          <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
-          <li class="{{navClassFor 'directory'}}"><a href="/directory">Directory</a></li>
-          <li class="{{navClassFor 'todos'}}"><a href="/sprintToDos">To-Dos</a></li>
-          <li class="{{navClassFor 'reflections'}}"><a href="/reflections">Reflections</a></li>
-          <li class="{{navClassFor 'addSprint'}}"><a href="/addsprint">Add Sprint</a></li>
-        </ul>
-      </div>
-    </div>
-    {{{yield}}}
+  <div class="navbar navbar-fixed-top siteNav">
+    <div class="logobox"><i class="icon-reorder icon-large mainIcon"></i><a href="/"><span class="red">Book</span>Strap</a></div>
+    {{> siteNav}}
   </div>
+
+  {{{yield}}}
+
+</template>
+
+<template name="siteNav">
+  <ul class="nav nav-pills">
+    {{#unless isHome}}
+    <li class="{{navClassFor 'curriculum'}}"><a href="/curriculum">Curriculum</a></li>
+    <li class="{{navClassFor 'directory'}}"><a href="/directory">Directory</a></li>
+    <li class="{{navClassFor 'todos'}}"><a href="/sprintToDos">To-Dos</a></li>
+    <li class="{{navClassFor 'reflections'}}"><a href="/reflections">Reflections</a></li>
+    <li class="{{navClassFor 'calendar'}}"><a href="/calendar">Calendar</a></li>
+    <li class="{{navClassFor 'specdashboard'}}"><a href="/specdashboard/d3">Live Monitor</a></li>
+    {{/unless}}
+  </ul>
+  <ul class="utilsUL">
+    <li><a href="/settings"><i class="icon-cog"></i></a></li>
+    <li><a href="/notifications"><i class="icon-bell"></i></a></li>
+  </ul>
 </template>
 
 <template name="home">
-  This is the homepage.
+  <div class="container-fluid homeContainer">
+    <div class="row-fluid">
+      <div class="span4 frontBox"><a href="/curriculum"><i class="icon-bookmark icon-4x"></i></a><br>
+        <span class="frontBox"><a href="/curriculum">Curriculum</a></span>
+      </div>
+      <div class="span4 frontBox"><a href="/directory"><i class="icon-key icon-4x"></i></a><br>
+        <span class="frontBox"><a href="/directory">Directory</a></span>
+      </div>
+      <div class="span4 frontBox"><a href="/sprintToDos"><i class="icon-check icon-4x"></i></a><br>
+        <span class="frontBox"><a href="/sprintToDos">To-Dos</a></span>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4 frontBox"><a href="/reflections"><i class="icon-coffee icon-4x"></i></a><br>
+        <span class="frontBox"><a href="/reflections">Reflections</a></span>
+      </div>
+      <div class="span4 frontBox"><a href="/calendar"><i class="icon-calendar icon-4x"></i></a><br>
+        <span class="frontBox"><a href="/calendar">Calendar</a></span>
+      </div>
+      <div class="span4 frontBox"><a href="/specdashboard/d3"><i class="icon-lightbulb icon-4x"></i><br>
+        <span class="frontBox">Live Monitor</a></span>
+      </div>
+    </div>
+    <div class="row-fluid siteCopy">
+      <div class="span12">
+        <h3>BookStrap is a dashboard that organizes the components of your classes.</h3>
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="not_found">

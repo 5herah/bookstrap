@@ -1,3 +1,126 @@
 body{
-	padding-top:100px;
+	margin: 10px 20px;
+	font-size: 115%;
+	color:#666;
+	font-family:"Quattrocento Sans";
+	background: url('/debut_light.png');
+}
+
+a{
+	color:#666;
+}
+
+.container, .well{
+	background-color: #fff;
+	padding:10px;
+}
+
+.homeContainer{
+	margin:100px auto 0;
+	width:50%;
+	text-align: center;
+	font-size: 140%
+}
+
+a:hover{
+	text-decoration: none;
+	color:#777;
+}
+
+.main-icon{
+
+}
+
+.pageTitle{
+	text-align: center;
+	border-bottom:2px solid #ddd;
+	margin-bottom:15px;
+}
+
+.brand p{
+	font-size: 200%;
+	font-family: Brawler;
+	padding:5px 0 10px 0;
+	font-weight: bolder;
+	margin-top:10px;
+}
+
+.container-fluid, .container{
+	border-radius: 5px;
+}
+
+.navspan{
+	background: url('/debut_light.png');
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+color: #ffffff;
+background-color: #888;
+}
+
+.siteNav{
+	background-color: #f0f0f0;
+	padding:8px;
+}
+
+select{
+	margin-bottom:0;
+}
+
+.frontBox{
+	padding:15px;
+	line-height: 200%;
+}
+
+.frontBox:hover{
+	background-color: #fff;
+	color: #de5d56;
+}
+
+.frontBox:hover a{
+	color: #de5d56;
+}
+
+.logobox{
+	float: left;
+	padding: 0 10px;
+	font-family: "Stint Ultra Expanded";
+	font-weight: bold;
+	font-size: 150%;
+	margin-right: 15px;
+}
+
+.mainIcon{
+	padding:0 10px;
+}
+
+.red{
+	color: #de5d56;
+}
+
+ul, ol {
+	padding: 0;
+	margin: 0 0 0px 25px;
+}
+
+.utilsUL{
+	float:right;
+	list-style-type: none;
+}
+
+.utilsUL li, .utilsUL li a{
+	float:left;
+	padding: 5px 10px;
+	color: #de5d56;
+}
+
+.utilsUL li:hover, .utilsUL li:hover a{
+	color:#777;
+}
+
+.siteCopy{
+	text-align: justify;
+	margin-top:40px;
+	border-top:2px #ddd solid;
+	border-bottom:2px #ddd solid;
 }

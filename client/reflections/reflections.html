@@ -1,28 +1,35 @@
 <template name="reflections">
 	<div class="container">
-	  <div class="row-fluid">
+	  <div class="pageTitle"><h3>Sprint Reflections</h3></div>
+	  <div class="row-fluid sprintReflectionChoices">
 	  <p>Select a sprint to assess:</p>
-	  <select multiple="multiple">
+	  <select>
 	  	{{#each sprints}}
 		  <option>{{sprintName}}</option>
 		  {{/each}}
 		</select>
-	  <button type="submit" class="btn">Submit</button>
+	  <button type="submit" class="btn sprintToReflectOn">Submit</button>
 	  </div>
 
-	  <div class="row-fluid">
-	  {{> preReflection}}
-	  {{> postReflection}}
-	  {{> pairReflection}}
-	  </div>
-	</div>
+	  <span class="reflectionBoxes">
+		  <div class="row-fluid">
+		  	<span class="span1"><button class="btn sprintGoBackButton" type="button"><i class="icon-reply"></i></button></span>
+		    <div class="sprintReflectionTitle span3"></div>
+		  </div>
+			  <div class="row-fluid">
+			  {{> preReflection}}
+			  {{> postReflection}}
+			  {{> pairReflection}}
+			  </div>
+	  </span>
+	 </div>
 </template>
 
 <template name="preReflection">
 	<div class="span4 reflectionPost">
 		<h4>Pre-Reflection</h4>
 		<p>What do you expect from this sprint's exercises? What are you having trouble with right now? How much time do you think it will take you to complete each piece?</p>
-	  <textarea rows="15" class="reflectionTextArea"></textarea>
+	  <textarea rows="15" class="reflectionTextArea preReflectionText"></textarea>
 	  <p>
 	    <button class="btn" type="button" id="submitPreReflection">Submit</button>
 	  </p>
@@ -33,7 +40,7 @@
 	<div class="span4 reflectionPost">
 		<h4>Post-Reflection</h4>
 		<p>How did you do? What did you find particularly challenging, and what was easy? Did you accurately predict the time it would take you to complete the exercises? What do you need to work on?</p>
-	  <textarea rows="15" class="reflectionTextArea"></textarea>
+	  <textarea rows="15" class="reflectionTextArea postReflectionText"></textarea>
 	  <p>
 	    <button class="btn" type="button" id="submitPostReflection">Submit</button>
 	  </p>
@@ -44,7 +51,7 @@
 	<div class="span4 reflectionPost">
 		<h4>Peer Reflection</h4>
 		<p>Jot down observations about your pair partner. Were they engaged with the material? Who drove? What were some positive things about working together? What could be improved?</p>
-	  <textarea rows="15" class="reflectionTextArea"></textarea>
+	  <textarea rows="15" class="reflectionTextArea pairReflectionText"></textarea>
 	  <p>
 	    <button class="btn" type="button" id="submitPeerReflection">Submit</button>
 	  </p>
