@@ -45,21 +45,4 @@ var renderTestburst = function (testJSON) {
       return arc(b);
     };
   }
-
-  // Add tooltips with suite/test description
-  var tooltip = d3.selectAll(selector + " path")
-    .append("div")
-    .style("position", "absolute")
-    .style("z-index", "10")
-    .style("visibility", "hidden")
-    .text(function(d) { return "d.description" });
-
-  d3.selectAll(selector + " path")
-    .attr("stroke", "black")
-    .attr("r", 50)
-    .attr("cx", 52)
-    .attr("cy", 52)
-    .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-    .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-    .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 }
