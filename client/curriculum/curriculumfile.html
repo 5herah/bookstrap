@@ -1,8 +1,11 @@
 <template name="curriculumfile">
-  <div class="well">
-    {{#markdown}}
-      {{getMarkdown}}
-      {{displayMarkdown}}
-    {{/markdown}}
+  <div class="container">
+    <div class="pageTitle"><h3>{{readmeTitle}}</h3></div>
+    <div class="well">
+      {{#markdown}}
+        {{getMarkdown}}
+        {{displayMarkdown}}
+      {{/markdown}}
+    </div>
   </div>
 </template>
