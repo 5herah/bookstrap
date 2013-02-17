@@ -13,12 +13,12 @@ var sprints = [
   }
 ];
 var todos = [
-  {description: "Make a sculpture out of onions, a green tarp from your uncle's shed, and a calendar."},
-  {description: "Hop on one foot until you remember all the shitty things your mom told you about insurance when you were a kid."},
-  {description: "Buy a crow."},
-  {description: "Edit the ten commandments. Bonus point if there are now ten."}
+  {description: "Implement your own version of the UnderscoreJS .each function."},
+  {description: "Rewrite Twitter.com from scratch."},
+  {description: "Complete the Ruby koans exercises."},
+  {description: "Refactor your chat client to work with Backbone.js."}
 ];
-for (var i = 0; i < toDoItems.length; i++) {
+for (var i = 0; i < sprints.length; i++) {
   var newSprint = Sprints.insert(sprints[i]);
   ToDos.insert(
     {
@@ -27,6 +27,4 @@ for (var i = 0; i < toDoItems.length; i++) {
     }
   );
 }
-
-
 

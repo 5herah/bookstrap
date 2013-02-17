@@ -10,9 +10,12 @@ showdown
 mini-pages
 mocha-web
 bootstrap
+font-awesome
 router
 moment
 accounts-base
 accounts-ui
 accounts-github
 accounts-google
+d3
+autopublish

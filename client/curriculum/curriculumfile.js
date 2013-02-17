@@ -1,12 +1,16 @@
 Template.curriculumfile.getMarkdown = function () {
-  var path = window.location.pathname
+  var path = window.location.pathname;
   var filename = path.split('/').slice(-1);
   Meteor.call('getFileSync', 'assets/readmes/' + filename, function (error, result) {
-    Session.set('fileText', result)
+    Session.set('fileText', result);
   });
 };
 
 Template.curriculumfile.displayMarkdown = function () {
   var text = Session.get('fileText');
   return text ? text : "No README found for this repo.";
+};
+
+Template.curriculumfile.readmeTitle = function () {
+  return window.location.pathname.split('/').slice(-1);
 };

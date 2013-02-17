@@ -1,32 +1,36 @@
-<template name='curriculumlist'>
-  <div class="well">
-    <table class="table table-bordered">
-      <tbody>
+
+<template name="curriculumlist">
+  <div class="container">
+    <div class="pageTitle"><h3>Curriculum Links</h3></div>
+    <div class="well">
+      <table class="table table-bordered">
         <thead>
           <th>Name</th>
           <th>README</th>
           <th>Other Notes</th>
           <th>Delete</th>
         </thead>
-        {{#each reposList}}
-          <tr>
-            <td>{{name}}</td>
-            <td><a href="/curriculum/{{name}}.md">{{name}}.md</a></td>
-            <td></td>
-            <td><button id="deleterepo" class="btn btn-danger">X</button></td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-  <div>
-    <form>
-      <input id="newreponame" type="text" placeholder="New repo name"></input>
-      <button id="newreposubmit" type="button" class="btn btn-primary" value="submit">Create New Repo</button>
-    </form>
-  </div>
-  <div class="well">
-    Here's what's coming up this week...
-    (weekly calendar excerpt here from calendar branch)
+        <tbody>
+          {{#each reposList}}
+            <tr>
+              <td>{{name}}</td>
+              <td><a href="/curriculum/{{.}}">{{.}}</a></td>
+              <td></td>
+              <td><button id="deleterepo" class="btn btn-danger">X</button></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <form>
+        <input id="newreponame" type="text" placeholder="New repo name"></input>
+        <button id="newreposubmit" type="button" class="btn btn-primary" value="submit">Create New Repo</button>
+      </form>
+    </div>
+    <div class="well">
+      Here's what's coming up this week...
+      (weekly calendar excerpt here from calendar branch)
+    </div>
   </div>
 </template>

@@ -8,3 +8,12 @@
 	padding:15px;
 	height:80%;
 }
+
+.reflectionBoxes{
+	display:none;
+}
+
+.sprintReflectionTitle{
+	margin-top: 0px;
+	margin-left: -30px;
+}

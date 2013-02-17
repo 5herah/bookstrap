@@ -27,3 +27,11 @@ Meteor.publish("specresults", function () {
 Meteor.publish("sprints", function () {
   return Sprints.find({}, {fields: {secretInfo: 0}});
 });
+
+Meteor.publish("todos", function () {
+  return Sprints.find({}, {fields: {secretInfo: 0}});
+});
+
+Meteor.publish("calendar", function () {
+  return Sprints.find({}, {fields: {secretInfo: 0}});
+});

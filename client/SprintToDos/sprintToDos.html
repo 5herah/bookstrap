@@ -1,6 +1,6 @@
 	<template name="sprintToDos">
-		<div class="container">
-		{{loginButtons}}
+      <div class="container">
+      	<div class="pageTitle"><h3>Sprint To-Dos</h3></div>
 		{{> toDosAdminView}}
 		{{> toDosStudentView}}
 	  </div>
@@ -8,9 +8,7 @@
 
 	<template name="toDosAdminView">
 		<form>
-		  <fieldset>
-		    <legend>Add a to-do item</legend>
-		    <label>To Do:</label>
+		    <span class="help-block">Create a to-do item:</span>
 		    <input type="text" id="theToDoItem">
 		    <span class="help-block">Select the sprint to add this to-do to. You can select more than one sprint (use cmd + click).</span>
 		    <select multiple="multiple" id="multiple">
@@ -18,7 +16,7 @@
 				  <option>{{sprintName}}</option>
 				  {{/each}}
 				</select>
-		    <button type="submit" class="btn">Submit</button>
+			<p><button type="submit" class="btn toDoSubmit">Submit</button></p>
 		  </fieldset>
 		</form>
 	</template>
@@ -28,7 +26,9 @@
 			<thead>
 		    <th>Sprint:</th>
 		    <th>To-Do:</th>
+		    {{#if student}}
 		    <th>Done</th>
+		    {{/if}}
 		  </thead>
 		  {{#each toDos}}
 		  <tr>
@@ -36,11 +36,13 @@
 		  	<td>
 		  		<p>{{description}}</p><br>
     		</td>
+    		{{#if student}}
     		<td>
     			<label class="checkbox">
     				<input type="checkbox" class="donebox">
   				</label>
     		</td>
+    		{{/if}}
 		  </tr>
 		  {{/each}}
 		</table>
