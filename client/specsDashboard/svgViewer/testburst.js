@@ -3,7 +3,7 @@ var renderTestburst = function (testJSON) {
   var w = 150,
       h = 150,
       r = Math.min(w, h) / 2,
-      color = d3.scale.ordinal().domain([0,1]).range(["DD2222","22AA22"])
+      color = d3.scale.ordinal().domain([false,true]).range(["DD2222","22AA22"])
       // color = d3.scale.category20c();
 
   var selector = ".testburst-"+testJSON.users[0];
@@ -33,7 +33,7 @@ var renderTestburst = function (testJSON) {
       .attr("fill-rule", "evenodd")
       .attr("text", function(d) { return d.description })
       .style("stroke", "#fff")
-      .style("fill", function(d) { return color((d.children ? d : d.parent).passed); })
+      .style("fill", function(d) { return color(d.passed); })
 
   // Interpolate the arcs in data space.
   function arcTween(a) {
