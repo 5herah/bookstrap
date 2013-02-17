@@ -2,7 +2,7 @@
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
     "branch": "master",
-    "commit": "4d98d8cb4e5a95e9e98953f44c872c9332a042a3"
+    "commit": "405cd9e86c6336bd9aaa7a8f240bb9815dceed2d"
   },
   "dependencies": {
     "basePackages": {
@@ -20,18 +20,18 @@
       },
       "mini-pages": {
         "git": "https://github.com/cmather/meteor-mini-pages.git",
-        "tag": "v0.2.3",
-        "commit": "dcf77ccca21508a1eb8bec3943bf610b2b8077b5"
+        "tag": "v0.3.0",
+        "commit": "3de8b93dd4355ebbdcfaed7891350b349ee54815"
       },
       "mocha-web": {
         "git": "https://github.com/mad-eye/meteor-mocha-web.git",
-        "tag": "v0.0.1",
-        "commit": "1edfc84969fcdd3edc05c4a31668199276594ab5"
+        "tag": "v0.0.2",
+        "commit": "c534e901f9e5423240ab9c2de121890999d68bbb"
       },
       "font-awesome": {
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
-        "tag": "v0.1.2",
-        "commit": "f68badb67341b4a4c83d7f449a4e985613ff63d5"
+        "tag": "v0.1.3",
+        "commit": "e507577b97827de662866304f8b9d3d553e3912f"
       },
       "moment": {
         "git": "https://github.com/possibilities/meteor-moment.git",
@@ -40,13 +40,8 @@
       },
       "page-js": {
         "git": "https://github.com/tmeasday/meteor-page-js.git",
-        "tag": "v1.3.3",
-        "commit": "c1e9832af3fc2b2f5139a16d93a82ca6fa0655da"
-      },
-      "bootstrap-updated": {
-        "git": "https://github.com/Charuru/bootstrap-updated.git",
-        "tag": "v1.0.1",
-        "commit": "bdd5fcc8e134e62bcbb9d11aad8270534ffb6493"
+        "tag": "v1.3.5",
+        "commit": "c652f795a86498aa4609ab637a694710421cb218"
       }
     }
   }
